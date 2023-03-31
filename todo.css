@@ -1,0 +1,73 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.todo-top{
+    display: flex;
+    flex-direction: column;
+}
+.todo-input , .todo-reflesh{
+    width:23rem;
+    height: 40px;
+    padding: 0 8px;
+    margin: 30px 0;
+    outline: 0;
+    border-radius:20px;
+    border-color: #ccc;
+}
+
+/* .btn , .but{
+   display: flex;
+   margin-left: 10px;
+} */
+.btn, .but{
+    width:100px;
+    padding: 5px;
+    color: #fff;
+    background: linear-gradient(#4286f4 ,#373B44);
+    outline: none;
+    border-radius: 10px;
+    font-size: 17px;
+    letter-spacing: .5px;
+}
+
+.todo-bottom{
+    display: flex;
+    flex-direction: column;
+}
+.todoUl{
+    display: flex;
+    flex-direction: column;
+}
+.todoLi{
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    text-align: left;
+    width: 23rem;
+    height: 40px;
+    border-radius: 20px;
+    border: 2px solid #ccc;
+    list-style: none;
+    margin-left: -30px;
+    padding:5px  8px;
+    margin-bottom: 10px;
+}
+.todoLi a{
+    text-decoration: none;  
+}
+.fa-xmark{
+   
+    color: #000;
+    font-size: 18px;
+    margin-top: -15px;
+}
