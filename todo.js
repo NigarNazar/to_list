@@ -13,10 +13,24 @@ function eventlistener(){
     todoForm.addEventListener("submit",addTodo);
     document.addEventListener("DOMContentLoaded" , loadedToUp);
     todoUl.addEventListener("click" , deletTodo);
+    todoRef.addEventListener("keyup"  , filtreTodo)
     
    
 }
 
+function filtreTodo(e) {
+    const value = e.target.value.toLowerCase();
+    const liValue = document.querySelectorAll(".todoLi");
+   liValue.forEach(listItem => {
+    const text = listItem.textContent.toLowerCase()
+    if(text.indexOf(value) === -1){
+        listItem.setAttribute("style","display : none !important");
+    }else{
+        listItem.setAttribute("style" , "display :block");
+    }
+
+   });
+}
 function deletTodo(e) {
     if(e.target.className === "fa-solid fa-xmark"){
 e.target.parentElement.parentElement.remove()
