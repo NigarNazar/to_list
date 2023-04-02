@@ -11,10 +11,35 @@ eventlistener()
 
 function eventlistener(){
     todoForm.addEventListener("submit",addTodo);
+    document.addEventListener("DOMContentLoaded" , loadedToUp);
+    todoUl.addEventListener("click" , deletTodo);
     
    
 }
 
+function deletTodo(e) {
+    if(e.target.className === "fa-solid fa-xmark"){
+e.target.parentElement.parentElement.remove()
+deletTodoFromStorega(e.target.parentElement.parentElement.textContent)
+    };
+};
+
+function deletTodoFromStorega(deletTodoTo){
+    let todos = getTodoToStorega()
+    todos.forEach(function(todo , index) {
+        if(todo === deletTodoTo){
+todos.splice(index,1)
+        }
+    localStorage.setItem("todos", JSON.stringify(todos));
+    })
+}
+
+function loadedToUp(e){
+    let todos = getTodoToStorega();
+    todos.forEach(function(todo){
+     addTodoToUI(todo);
+    })
+}
 function addTodo(e){
     const newTodo = todoIn.value.trim();
     if(newTodo === ""){
